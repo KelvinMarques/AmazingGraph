@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap');
 
+:root{
+
+    --Orange: #D2872C;
+    --Gray: #766F68;
+    --White: #ffffff;
+
+
+}
+
+@media(max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media(max-width: 720px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +30,7 @@
     list-style: none;
     text-decoration-style: none;
     text-decoration: none;
-    color: #766F68;
+    color: var(--Gray);
 }
 #corpo{
     width: 100%;
@@ -17,19 +38,57 @@
 }
 .navbar{
     width: 100%;
-    height: 20vh;
+    height: 10vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+    
 }
 .navbar h1{
     font-size: 2em;
-    color: #D2872C;
+    color: var(--Orange);
 }
-.navbar ul li a{
-    display: inline-flexbox;
+#icone{
+    cursor: pointer;
+    padding: 1vw 1vh;
+    
+    z-index: 1;
 }
+.barra ul li{
+    margin-bottom: 2vh;
+    border-bottom: 2px solid var(--White);
+}
+.barra ul li a{
+    color: var(--White);
+    margin-bottom: 0vh;
+}
+.barra a{
+    font-size: 1.2em;
+}
+.barra{
+    background-color: var(--Gray);
+    height: 100%;
+    width: 50%;
+    margin: 0%;
+    transition: all .2s linear;
+    position: absolute;
+    
+    padding: 2vw 2vh;
+    display: none;
+    right: 0%;
+    bottom: -2%;
+}
+#icone i{
+    font-size: 2em;
+}
+#check{
+    display: none;
+}
+#check:checked ~ .barra{
+    display: initial;
+    transition: all 1s;
+}
+
 
 section {
     height: 100%;
@@ -54,8 +113,102 @@ section p{
 section button{
     font-size: 1.2em;
     color: white;
-    background-color: #D2872C;
+    background-color: var(--Orange);
     padding: 3vh 25vw;
     border: none;
     border-radius: 20px;
+}
+
+@media screen and (min-width: 800px) {
+    *{
+        padding: 0%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .navbar{
+        padding: 4rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .navbar h1{
+        /* margin: 0 1rem; */
+    }
+    #icone{
+        display: none;
+    }
+    .barra{
+        width: 40%;
+        height: 10vh;
+
+        margin: 0%;
+        
+        position: relative;
+        display: flex;
+        background-color: var(--White);
+   
+        justify-content: flex-end;
+    }
+    .barra ul{
+        display: flex;
+        flex-direction: row;
+        color: black;
+    }
+    .barra ul li a{
+        color: var(--Gray);
+        font-size: 1.4rem;
+        margin: 0 1rem;
+    }
+
+    section{
+        height: 100%;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        padding: 0 5rem;
+        text-align: center;
+        margin: 3rem 0;
+    }
+    #text{
+        width: 40%;
+        text-align: left;
+        word-spacing: 0.1rem;
+        margin-bottom: 5rem;
+        position: relative;
+    }
+    section img {
+        max-width: 90%;
+        min-width: 60%;
+        position: relative;
+        left: -7rem;
+        top: 1rem;
+    }
+
+    section h2 {
+        width:  33rem;
+        
+        font-size: 4rem;
+        text-align: left;
+        /* margin-bottom: 5vh; */
+    }
+
+    section p {
+        width: 80%;
+        font-size: 1.5rem;
+        margin-bottom: 5vh;
+    }
+
+    section button {
+        font-size: 1.2em;
+        color: white;
+        background-color: var(--Orange);
+        padding: 1.5rem 7rem;
+        border: none;
+        border-radius: 20px;
+    }
+
+
+
 }
